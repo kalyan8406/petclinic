@@ -1,11 +1,13 @@
 trigger:
- - main
-pool: default ---> ubuntu
-stages:
-  - stage: "Build"
-    jobs:
-      - job: Buildjob
-        steps:
-          - script: mvn package
+- main
 
-      
+pool:
+  name: 'default'
+
+stages:
+- stage: Build
+  jobs:
+  - job: BuildJob
+    steps:
+    - script: mvn package
+      displayName: 'Build Maven Project'
