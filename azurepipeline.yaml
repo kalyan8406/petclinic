@@ -1,0 +1,11 @@
+trigger:
+ - main
+pool: default ---> ubuntu
+stages:
+  - stage: "Build"
+    jobs:
+      - job: Buildjob
+        steps:
+          - script: mvn package
+
+      
